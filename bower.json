@@ -1,0 +1,24 @@
+{
+  "name": "puppetshow",
+  "version": "0.0.1",
+  "homepage": "https://github.com/erikanderson/puppetshow",
+  "authors": [
+    "Erik Anderson <erik.anderson@mx.com>"
+  ],
+  "description": "front end for puppet",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/components"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.6",
+    "bootstrap": "~3.3.5"
+  }
+}
