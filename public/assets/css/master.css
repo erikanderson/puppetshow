@@ -1,0 +1,23 @@
+html, body, .container-fluid, .row {
+    height: 100%;
+}
+
+.sidebar {
+  background-color: #3498db;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    background-color: #d35400;
+  }
+}
+
+.content {
+  background: #27ae60;
+}
