@@ -1,9 +1,10 @@
 html, body, .container-fluid, .row {
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sidebar {
-  background-color: #3498db;
+  background-color: #bdc3c7;
 }
 
 @media (min-width: 992px) {
@@ -14,10 +15,45 @@ html, body, .container-fluid, .row {
     bottom: 0;
     z-index: 1000;
     display: block;
-    background-color: #d35400;
+    background-color: #7f8c8d;
   }
 }
 
-.content {
-  background: #27ae60;
+.full-button {
+  display: block;
+  /*text-align: center;*/
+  vertical-align: middle;
+  line-height: 50px;
+  width: 100%;
+  size: 14px;
+  font-size: 14px;
+  height: 50px;
+  font-style: bold;
+  color: #ecf0f1;
+  background-color: #7f8c8d;
+  padding-left: 10px;
+  /*transition:color .3s ease-out, background .3s ease-in;*/
+  /*margin: 0;
+  padding: 0;*/
 }
+
+.full-button:hover {
+  background-color: #95a5a6;
+  /*color: rgb(125, 101, 172);*/
+  cursor: pointer;
+}
+
+.sidebar {
+  padding: 0;
+}
+
+.logo {
+  width: 60%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/*.content {
+  background: #27ae60;
+}*/

@@ -5,8 +5,20 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
     .state('/', {
       url: '/',
       templateUrl: '/app/templates/home.html',
-      controller: 'homeController',
+      controller: 'homeController'
     })
+    .state('nodeFacts', {
+      url: '/node/:id',
+      templateUrl: '/app/templates/node.html',
+      controller: 'nodeController',
+      resolve: {
+        facts: function(nodeService, $stateParams){
+          console.log('nodeService facts resolve ', $stateParams);
+          return nodeService.getFacts($stateParams.id)
+        }
+      }
+    })
+
   $urlRouterProvider.otherwise("/");
 
   $locationProvider.html5Mode({

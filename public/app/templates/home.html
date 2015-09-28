@@ -1,7 +1,17 @@
 This is home template
 
-<div ng-repeat="node in nodes" class="panel panel-default">
-  <div class="panel-body">
-    {{node}}
-  </div>
-</div>
+<table class="table table-hover">
+  <thead>
+    <th>Node</th>
+    <th>Environment</th>
+    <th>Last Report</th>
+    <th>Facts</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="node in nodes">
+      <td>{{ node.certname }}</td>
+      <td>{{ node.report_environment }}</td>
+      <td>{{ node.report_timestamp | date : 'medium' }}</td>
+      <td><a ui-sref="nodeFacts({ id: node.certname})">Facts</td>
+    </tr>
+</table>
