@@ -9,7 +9,7 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
     })
     .state('nodeFacts', {
       url: '/node/:id',
-      templateUrl: '/app/templates/node.html',
+      templateUrl: '/app/templates/facts.html',
       controller: 'nodeController',
       resolve: {
         facts: function(nodeService, $stateParams){
@@ -21,8 +21,8 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise("/");
 
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
 })

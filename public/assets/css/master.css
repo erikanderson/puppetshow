@@ -3,6 +3,10 @@ html, body, .container-fluid, .row {
     font-family: 'Roboto', sans-serif;
 }
 
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+}
+
 .sidebar {
   background-color: #bdc3c7;
 }
