@@ -1,5 +1,5 @@
 # puppetshow
-puppet 4 front end 
+[puppet](http://docs.puppetlabs.com/puppet/) 4 front end 
 
 ###Prerequisites
 - puppet 4.2.3
