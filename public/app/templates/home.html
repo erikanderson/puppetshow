@@ -1,21 +1,26 @@
 This is home template
 
-<pre ng-repeat="node in nodes">
+<!-- <pre ng-repeat="node in nodes">
   {{ node }}
-</pre>
+</pre> -->
+
+<pre>Health: {{ healths }}</pre>
 
 <table class="table table-hover">
   <thead>
     <th>Node</th>
     <th>Environment</th>
     <th>Last Report</th>
+    <th>Status</th>
     <th>Facts</th>
   </thead>
   <tbody>
     <tr ng-repeat="node in nodes">
       <td>{{ node.certname }}</td>
       <td>{{ node.report_environment }}</td>
-      <td>{{ node.report_timestamp | date : 'medium' }}</td>
+      <td>{{ node.report_timestamp }}</td>
+      <td>{{ node.latest_report_status }}</td>
+      <!-- <td>{{ node.report_timestamp | date : 'medium' }}</td> -->
       <td><a ui-sref="nodeFacts({ id: node.certname})">Facts</td>
     </tr>
 </table>
