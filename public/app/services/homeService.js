@@ -21,6 +21,7 @@ app.service('homeService', function($http, $q){
       url: 'http://10.211.55.39:8080/pdb/query/v4/aggregate-event-counts?summarize_by=certname',
     }).then(function(res){
         console.log('getHealth service res: ', res);
+        delete res.data[0]['summarize_by'];
         deferred.resolve(res.data);
     })
     return deferred.promise;

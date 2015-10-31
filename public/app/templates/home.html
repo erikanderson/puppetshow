@@ -1,10 +1,64 @@
-This is home template
+<br>
+<div class="row">
 
-<!-- <pre ng-repeat="node in nodes">
-  {{ node }}
-</pre> -->
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-success">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{health.successes}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Successes</strong>
+        </div>
+    </div>
+  </div>
 
-<pre>Health: {{ healths }}</pre>
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-danger">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{health.failures}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Failures</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-warning">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{health.skips}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Skips</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{health.noops}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Noops</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{health.total}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Total</strong>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<pre>Health: {{ health }}</pre>
 
 <table class="table table-hover">
   <thead>
@@ -24,3 +78,5 @@ This is home template
       <td><a ui-sref="nodeFacts({ id: node.certname})">Facts</td>
     </tr>
 </table>
+
+<pre ng-repeat="node in nodes">{{ node }}</pre>

@@ -58,6 +58,15 @@ a, a:hover, a:active, a:visited {
   padding-top: 10px;
 }
 
-/*.content {
-  background: #27ae60;
-}*/
+.status {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.status .panel-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 45px;
+    padding-top: 20px;
+    letter-spacing: -0.8px;
+}
