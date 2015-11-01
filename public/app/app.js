@@ -8,9 +8,9 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
       controller: 'homeController'
     })
     .state('nodeFacts', {
-      url: '/node/:id',
+      url: '/facts/:id',
       templateUrl: '/app/templates/facts.html',
-      controller: 'nodeController',
+      controller: 'factsController',
       resolve: {
         facts: function(nodeService, $stateParams){
           console.log('nodeService facts resolve ', $stateParams);
@@ -18,11 +18,18 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
         }
       }
     })
+    .state('nodeReport', {
+      url: '/report/:id',
+      templateUrl: '/app/templates/report.html',
+      controller: 'reportController',
+      resolve: {
+        report: function(nodeService, $stateParams){
+          console.log('nodeService report resolve ', $stateParams);
+          return nodeService.getReport($stateParams.id)
+        }
+      }
+    })
 
   $urlRouterProvider.otherwise("/");
 
-  // $locationProvider.html5Mode({
-  //   enabled: true,
-  //   requireBase: false
-  // });
 })

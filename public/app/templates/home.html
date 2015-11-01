@@ -65,17 +65,17 @@
     <th>Node</th>
     <th>Environment</th>
     <th>Last Report</th>
-    <th>Status</th>
+    <th>Last Report Status</th>
     <th>Facts</th>
   </thead>
   <tbody>
     <tr ng-repeat="node in nodes">
       <td>{{ node.certname }}</td>
       <td>{{ node.report_environment }}</td>
-      <td>{{ node.report_timestamp }}</td>
+      <td><a ui-sref="nodeReport({ id: node.latest_report_hash})">{{ node.report_timestamp }}</a></td>
       <td>{{ node.latest_report_status }}</td>
       <!-- <td>{{ node.report_timestamp | date : 'medium' }}</td> -->
-      <td><a ui-sref="nodeFacts({ id: node.certname})">Facts</td>
+      <td><a ui-sref="nodeFacts({ id: node.certname})">Facts<a/></td>
     </tr>
 </table>
 
