@@ -1,1 +1,51 @@
-{{ report }}
+<br>
+<h1>{{ report.certname }}</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <pre>
+      Status: {{ report.status }}
+      Puppet Version: {{ report.puppet_version }}
+      Hash: {{ report.hash }}
+    </pre>
+  </div>
+</div>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div ng-repeat="event in report.resource_events.data" class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          {{ event.containment_path }}
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ul>
+  <li class="list-group-item" ng-repeat="event in report.resource_events.data">
+    <pre>{{ event }}</pre>
+  </li>
+</ul> -->
+
+<div class="row">
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="log in report.logs.data">
+        <span class="log">{{ log.level }}  |  {{ log.file }} {{ log.message }}</span>
+        <!-- <span class="log">{{ log.time | date : 'medium'}}  |  {{ log.level }}  |  {{ log.file }} {{ log.message }}</span> -->
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<br>
+<pre>{{ report | json }}</pre>
