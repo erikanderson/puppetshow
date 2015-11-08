@@ -11,40 +11,21 @@
   </div>
 </div>
 
-<div ng-controller="accordianController">
-  <script type="text/ng-template" id="group-template.html">
-    <div class="panel {{panelClass || 'panel-default'}}">
-      <div class="panel-heading">
-        <h4 class="panel-title" style="color:#fa39c3">
-          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
-            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
-        </h4>
-      </div>
-      <div class="panel-collapse collapse" uib-collapse="!isOpen">
-        <div class="panel-body" style="text-align: right" ng-transclude></div>
-      </div>
-    </div>
-  </script>
-
-  <uib-accordion close-others="oneAtATime">
-    <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.containment_path }}">
-      <pre>{{ event }}</pre>
-    </uib-accordion-group>
-  </uib-accordion>
-
-</div>
+<uib-accordion close-others="oneAtATime">
+  <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.containment_path }}" panel-class="{{ event.panel_status }}">
+    {{ event | json }}
+  </uib-accordion-group>
+</uib-accordion>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="log in report.logs.data">
-        <span class="log">{{ log.level }}  |  {{ log.file }} {{ log.message }}</span>
-        <!-- <span class="log">{{ log.time | date : 'medium'}}  |  {{ log.level }}  |  {{ log.file }} {{ log.message }}</span> -->
+        <span class="log">{{ log.level }}  |  {{ log.file }} | {{ log.source }} | {{ log.message }}</span>
       </li>
     </ul>
   </div>
 </div>
-
 
 <br>
 <pre>{{ report | json }}</pre>
