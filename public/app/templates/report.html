@@ -12,8 +12,11 @@
 </div>
 
 <uib-accordion close-others="oneAtATime">
-  <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.containment_path }}" panel-class="{{ event.panel_status }}">
-    {{ event | json }}
+  <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.resource_type }} {{ event.resource_title }} was {{ event.message }}" panel-class="{{ event.panel_status }}">
+    <pre>Before: {{ event.old_value }}</pre>
+    <pre>After: {{ event.new_value }}</pre>
+
+    <pre>{{ event | json }}</pre>
   </uib-accordion-group>
 </uib-accordion>
 
