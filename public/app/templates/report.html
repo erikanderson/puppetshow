@@ -11,29 +11,28 @@
   </div>
 </div>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div ng-repeat="event in report.resource_events.data" class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          {{ event.containment_path }}
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+<div ng-controller="accordianController">
+  <script type="text/ng-template" id="group-template.html">
+    <div class="panel {{panelClass || 'panel-default'}}">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="color:#fa39c3">
+          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
+            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
+        </h4>
+      </div>
+      <div class="panel-collapse collapse" uib-collapse="!isOpen">
+        <div class="panel-body" style="text-align: right" ng-transclude></div>
       </div>
     </div>
-  </div>
+  </script>
+
+  <uib-accordion close-others="oneAtATime">
+    <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.containment_path }}">
+      <pre>{{ event }}</pre>
+    </uib-accordion-group>
+  </uib-accordion>
+
 </div>
-
-
-<!-- <ul>
-  <li class="list-group-item" ng-repeat="event in report.resource_events.data">
-    <pre>{{ event }}</pre>
-  </li>
-</ul> -->
 
 <div class="row">
   <div class="col-md-8">
@@ -49,3 +48,36 @@
 
 <br>
 <pre>{{ report | json }}</pre>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div ng-repeat="event in report.resource_events.data" class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          {{ event.containment_path }}
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <ul>
+  <li class="list-group-item" ng-repeat="event in report.resource_events.data">
+    <pre>{{ event }}</pre>
+  </li>
+</ul> -->

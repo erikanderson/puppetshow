@@ -78,3 +78,5 @@ a, a:hover, a:active, a:visited {
 .log {
   font-family: monospace;
 }
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

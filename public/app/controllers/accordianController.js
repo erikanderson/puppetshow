@@ -1,9 +1,4 @@
-var app = angular.module('puppetshow');
-
-app.controller('reportController', function($scope, nodeService, report){
-
-  $scope.report = report;
-
+angular.module('puppetshow').controller('accordianController', function ($scope) {
   $scope.oneAtATime = true;
 
   $scope.groups = [
@@ -17,11 +12,15 @@ app.controller('reportController', function($scope, nodeService, report){
     }
   ];
 
-  $scope.items = $scope.report.resource_events.data;
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
 
   $scope.status = {
     isFirstOpen: true,
     isFirstDisabled: false
   };
-
-})
+});

@@ -1,4 +1,4 @@
-var app = angular.module('puppetshow', ['ui.router']);
+var app = angular.module('puppetshow', ['ui.router', 'ui.bootstrap']);
 
 app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
   $stateProvider
