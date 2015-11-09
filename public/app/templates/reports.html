@@ -1,0 +1,17 @@
+<h1>{{ reports[0].certname }}</h1>
+
+<table class="table table-hover">
+  <thead>
+    <th>Environment</th>
+    <th>Report</th>
+    <th>Report Hash</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="report in reports | orderBy: 'receive_time':true | limitTo:25">
+      <td>{{ report.environment }}</td>
+      <td><a ui-sref="nodeReport({ id: report.hash})">{{ report.receive_time | date: 'medium' }}</a></td>
+      <td>{{ report.hash }}</td>
+      <td>{{ report.status }}</td>
+    </tr>
+</table>

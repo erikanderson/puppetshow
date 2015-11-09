@@ -1,4 +1,4 @@
-<br>
+
 <h1>{{ report.certname }}</h1>
 
 <div class="row">
@@ -12,7 +12,7 @@
 </div>
 
 <uib-accordion close-others="oneAtATime">
-  <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.resource_type }} {{ event.resource_title }} was {{ event.message }}" panel-class="{{ event.panel_status }}">
+  <uib-accordion-group ng-repeat="event in report.resource_events.data" heading="{{ event.resource_type }} {{ event.resource_title }} {{ event.message }}" panel-class="{{ event.panel_status }}">
     <pre>{{ event | json }}</pre>
   </uib-accordion-group>
 </uib-accordion>

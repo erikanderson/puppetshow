@@ -29,6 +29,17 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
         }
       }
     })
+    .state('nodeReports', {
+      url: '/reports/:id',
+      templateUrl: '/app/templates/reports.html',
+      controller: 'reportsController',
+      resolve: {
+        reports: function(nodeService, $stateParams){
+          console.log('nodeService report resolve ', $stateParams);
+          return nodeService.getReports($stateParams.id)
+        }
+      }
+    })
 
   $urlRouterProvider.otherwise("/");
 

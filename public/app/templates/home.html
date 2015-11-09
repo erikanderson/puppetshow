@@ -84,7 +84,7 @@
       <td>{{ node.report_environment }}</td>
       <td><a ui-sref="nodeReport({ id: node.latest_report_hash})">{{ node.report_timestamp | date: 'medium' }}</a></td>
       <td>{{ node.latest_report_status }}</td>
-      <td><a ui-sref="nodeReport({ id: node.latest_report_hash})">Reports</a></td>
+      <td><a ui-sref="nodeReports({ id: node.certname})">Reports</a></td>
       <td><a ui-sref="nodeFacts({ id: node.certname})">Facts<a/></td>
     </tr>
 </table>

@@ -10,10 +10,10 @@ app.service('homeService', function($http, $q){
     }).then(function(res){
         console.log('getNodes service res: ', res);
         res['success'] = 0;
-        res['failed'] = 0;
-        res['skips'] = 0;
-        res['noops'] = 0;
-        res['total'] = 0;
+        res['failed']  = 0;
+        res['skips']   = 0;
+        res['noops']   = 0;
+        res['total']   = 0;
         for (var i = 0; i < res.data.length; i++) {
           status = res.data[i].latest_report_status
           if (res[status]){
