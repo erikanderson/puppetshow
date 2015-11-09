@@ -5,7 +5,8 @@ app.controller('homeController', function($scope, homeService){
   $scope.getNodes = function(){
     homeService.getNodes().then(function(res){
       console.log('getNodes controller res.data: ', res);
-      $scope.nodes = res;
+      $scope.nodesres = res;
+      $scope.nodes = res.data;
     })
   }
 

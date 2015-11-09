@@ -4,7 +4,7 @@
   <div class="col-xs-6 col-md-2">
     <div class="panel status panel-success">
         <div class="panel-heading">
-            <h1 class="panel-title text-center">{{health.successes}}</h1>
+            <h1 class="panel-title text-center">{{ nodesres.success }}</h1>
         </div>
         <div class="panel-body text-center">
             <strong>Successes</strong>
@@ -13,9 +13,20 @@
   </div>
 
   <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{ nodesres.unchanged }}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Unchanged</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
     <div class="panel status panel-danger">
         <div class="panel-heading">
-            <h1 class="panel-title text-center">{{health.failures}}</h1>
+            <h1 class="panel-title text-center">{{nodesres.failed}}</h1>
         </div>
         <div class="panel-body text-center">
             <strong>Failures</strong>

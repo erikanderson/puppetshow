@@ -27,7 +27,7 @@ app.service('nodeService', function($http, $q){
           if (res.data[0].resource_events.data[i].status == 'success'){
             res.data[0].resource_events.data[i].panel_status = 'panel-success';
           }
-          if (res.data[0].resource_events.data[i].status == 'fail'){
+          if (res.data[0].resource_events.data[i].status == 'failure'){
             res.data[0].resource_events.data[i].panel_status = 'panel-danger';
           }
 
