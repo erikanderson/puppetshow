@@ -10,13 +10,6 @@ app.controller('homeController', function($scope, homeService){
     })
   }
 
-  $scope.getHealth = function(){
-    homeService.getHealth().then(function(res){
-      console.log('getHealth controller res.data: ',res);
-      $scope.health = res[0];
-    })
-  }
-
   $scope.getNodes();
-  $scope.getHealth();
+
 })
