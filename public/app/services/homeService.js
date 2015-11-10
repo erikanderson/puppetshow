@@ -6,7 +6,7 @@ app.service('homeService', function($http, $q){
     var deferred = $q.defer();
     $http({
       method: 'GET',
-      url: 'http://10.211.55.39:8080/pdb/query/v4/nodes',
+      url: 'http://10.17.21.61:8080/pdb/query/v4/nodes',
     }).then(function(res){
         console.log('getNodes service res: ', res);
         res['success'] = 0;

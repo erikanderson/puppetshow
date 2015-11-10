@@ -6,7 +6,7 @@ app.service('nodeService', function($http, $q){
     var deferred = $q.defer();
     $http({
       method: 'GET',
-      url: 'http://10.211.55.39:8080/pdb/query/v4/nodes/' + node + '/facts',
+      url: 'http://10.17.21.61:8080/pdb/query/v4/nodes/' + node + '/facts',
     }).then(function(res){
         console.log('res.data: ', res.data);
         deferred.resolve(res.data);
@@ -18,7 +18,7 @@ app.service('nodeService', function($http, $q){
     var deferred = $q.defer();
     $http({
       method: 'GET',
-      url: 'http://10.211.55.39:8080/pdb/query/v4/reports?query=["=", "hash", "' + hash + '"]',
+      url: 'http://10.17.21.61:8080/pdb/query/v4/reports?query=["=", "hash", "' + hash + '"]',
     }).then(function(res){
         console.log('res: ', res);
         console.log('res.data: ', res.data);
@@ -40,7 +40,7 @@ app.service('nodeService', function($http, $q){
     var deferred = $q.defer();
     $http({
       method: 'GET',
-      url: 'http://10.211.55.39:8080/pdb/query/v4/reports?query=["=", "certname", "' + certname + '"]',
+      url: 'http://10.17.21.61:8080/pdb/query/v4/reports?query=["=", "certname", "' + certname + '"]',
     }).then(function(res){
         console.log('res getReports: ', res);
         console.log('res.data: ', res.data);
