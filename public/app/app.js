@@ -1,6 +1,6 @@
 var app = angular.module('puppetshow', ['ui.router', 'ngMaterial']);
 
-app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
+app.config(function($locationProvider, $stateProvider, $urlRouterProvider, $mdThemingProvider){
   $stateProvider
     .state('/', {
       url: '/',
@@ -13,5 +13,9 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
     enabled: true,
     requireBase: false
   });
+
+  $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey')
+    .accentPalette('orange');
 
 })
