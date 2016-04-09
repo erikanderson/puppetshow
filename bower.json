@@ -18,8 +18,10 @@
     "public/components"
   ],
   "dependencies": {
-    "angular": "angularjs#~1.4.6",
+    "angular": "angularjs#~1.4.7",
+    "angular-bootstrap": "~0.14.3",
     "angular-ui-router": "~0.2.15",
-    "angular-material": "~0.11.1"
+    "bootswatch-dist": "cerulean",
+    "font-awesome": "~4.4.0"
   }
 }

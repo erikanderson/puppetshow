@@ -1,1 +1,92 @@
-home teomplate
+<br>
+<div class="row">
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-success">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{ nodesres.success }}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Successes</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{ nodesres.unchanged }}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Unchanged</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-danger">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{nodesres.failed}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Failures</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-warning">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{nodesres.skips}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Skips</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{nodesres.noops}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Noops</strong>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-2">
+    <div class="panel status panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">{{nodesres.total}}</h1>
+        </div>
+        <div class="panel-body text-center">
+            <strong>Total</strong>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <th>Node</th>
+    <th>Environment</th>
+    <th>Latest Report</th>
+    <th>Latest Report Status</th>
+    <th>Report History</th>
+    <th>Facts</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="node in nodes">
+      <td>{{ node.certname }}</td>
+      <td>{{ node.report_environment }}</td>
+      <td><a ui-sref="nodeReport({ id: node.latest_report_hash})">{{ node.report_timestamp | date: 'medium' }}</a></td>
+      <td>{{ node.latest_report_status }}</td>
+      <td><a ui-sref="nodeReports({ id: node.certname})">Reports</a></td>
+      <td><a ui-sref="nodeFacts({ id: node.certname})">Facts<a/></td>
+    </tr>
+</table>
+
+<pre ng-repeat="node in nodes">{{ node }}</pre>
